@@ -153,7 +153,7 @@ final class InstallCommand extends Command
 
             return;
         }
-        $result = false
+        $result = false;
 
         if ($this->askConfirmation($input, $output, sprintf('Create the database "%s" (yes) or skip (no)?', $this->connection->getDatabase()), true)) {
             //throw new \Exception('Skipped database creation, aborting installation');
@@ -162,7 +162,7 @@ final class InstallCommand extends Command
             $command = $this->getApplication()->find('doctrine:database:create');
             $result = $command->run(new ArrayInput($options), $output);
         } else {
-            $result = true
+            $result = true;
         }
 
 

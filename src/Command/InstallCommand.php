@@ -82,13 +82,13 @@ final class InstallCommand extends Command
         $environment = $kernel->getEnvironment();
 
         // create the database, in case it is not yet existing
-        try {
-            $this->createDatabase($io, $input, $output);
-        } catch (\Exception $ex) {
-            $io->error('Failed to create database: ' . $ex->getMessage());
+        // try {
+        //     $this->createDatabase($io, $input, $output);
+        // } catch (\Exception $ex) {
+        //     $io->error('Failed to create database: ' . $ex->getMessage());
 
-            return self::ERROR_DATABASE;
-        }
+        //     return self::ERROR_DATABASE;
+        // }
 
         // bootstrap database ONLY via doctrine migrations, so all installation will have the correct and same state
         try {
